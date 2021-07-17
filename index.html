@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> marksheet</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style>
+		*{box-sizing:border-box;}
+		.main{height:auto;
+		width:70vw;
+		background-image:linear-gradient(hsla(0,0%,50%,0.5),hsla(0,0%,50%,0.5)),url('bg1.jpg');
+		background-size:cover;
+		padding:10px;margin:auto;
+		font-family:sans-serif;
+		}
+		.main div{width:60vw;height:auto;margin:auto;font-weight:bold;text-transform:capitalize;padding:25px;}
+		.main h2{margin-top:20vh;font-size:30px;}
+		.main h2,h3,h1{text-align:center;text-transform:uppercase;line-height:20px;}
+		.t1{width:60vw;text-align:center;border:2px solid grey;}
+		.main .div1{font-size:18px;padding-bottom:0px;}
+		.main .div2{padding-left:0px;}
+		.main .div3{position:relative;margin-bottom:5%}
+		.main .div3 p{position:absolute;left:25px;top:40%;}
+		.main .div3 span{position:absolute;right:25px;top:61%;}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+	<h2>bord of intermediate karachi</h2>
+	<h3>h.s.c part-i-ii entermediate examination(annual - 2020)</h3>
+	<h1>statement of marks</h1>
+	<div class="div1">
+	<p>marksheet no : <span id="marksheetNo"></span></p>
+	<p>group : <span id="group"> </span></p>
+	<p>roll no : <span id="rollNo"></span></p>
+	<p>enrolment/registration no : <span id="regNo"></span></p>
+	<p>name : <span id="name"></span></p>	
+	<p>father's name : <span id="fatherName"></span></p>
+	<p>college/private : <span id="collegeName"></span></p>
+	</div>		
+	
+	<div class="div2" >	
+	<table border="2" class="t1">
+		<tr>
+			<td >Result</td>
+			<td colspan="4" id="result"></td>
+			<td colspan="3" id="grade"></td>
+
+		</tr>
+
+		<tr>
+			<th>subjects</th>
+			<th>maths</th>
+			<th>physics</th>
+			<th>chemistry</th>
+			<th>english</th>
+			<th>cs</th>
+			<th>percentage</th>
+		</tr>
+		<tr>
+			<th>Total Marks</th>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+			<td id="per" rowspan="3"></td>
+		</tr>
+		<tr>
+			<th>Passing Marks</th>
+			<td>33</td>
+			<td>33</td>
+			<td>33</td>
+			<td>40</td>
+			<td>40</td>
+		</tr>
+
+		<tr>	
+			<th>Obtained Marks</th>				
+			<td id="phy"></td>
+			<td id="chem"></td>
+			<td id="maths"></td>
+			<td id="eng"></td>
+			<td id="cs"></td>
+		</tr>
+	</table>
+		</div>
+
+	<div class="div3">
+	<P>Dated : 16/7/2021</p>
+	<span>signature:_________________</span
+	</div>
+
+	</div>
+
+
+
+<script>
+	var marksheetNo=+prompt('Enter marksheet number'),group=prompt('Enter group'),rollNo=+prompt('Enter your roll number'),regNo=+prompt('Enter enrolment/registration number'),name=prompt('Enter your name'),fatherName= prompt('Enter father name'),collegeName=prompt('Enter college name'),
+	maths= +prompt('Enter maths marks'),phy=+prompt('Enter physics marks'),chem=+prompt('Enter chem marks'),eng=+prompt('Enter english marks'),cs=+prompt('Enter cs marks');
+	totalMarks=500;
+	obtMarks=maths+phy+chem+eng+cs;
+	percentage=eval(obtMarks/totalMarks*100);
+	
+	if(percentage>=80){
+		document.getElementById("result").innerHTML = ("pass (Excellent)");
+		document.getElementById("grade").innerHTML = (" 'A+' ");
+	}
+	
+	else if(percentage>=70){
+		document.getElementById("result").innerHTML = ("pass (very good)");
+		document.getElementById("grade").innerHTML = (" 'A' ");
+	}
+
+	else if(percentage>=60){
+		document.getElementById("result").innerHTML = ("pass (good)");
+		document.getElementById("grade").innerHTML = (" 'B' ");
+	}
+	else if(percentage>=50){
+		document.getElementById("result").innerHTML = ("pass (should improve)");
+		document.getElementById("grade").innerHTML = (" 'C' ");
+	}
+	else if(percentage>=40){
+		document.getElementById("result").innerHTML = ("pass (low performance)");
+		document.getElementById("grade").innerHTML = (" 'D' ");
+	}
+	else if(percentage<=39){
+		document.getElementById("result").innerHTML = (" FAIL ");
+		document.getElementById("grade").innerHTML = (" 'FAIL' ");
+	}
+
+	document.getElementById("phy").innerHTML = phy;
+	document.getElementById("chem").innerHTML = chem;
+	document.getElementById("maths").innerHTML = maths;
+	document.getElementById("eng").innerHTML = eng;
+	document.getElementById("cs").innerHTML = cs;
+	document.getElementById("per").innerHTML = percentage;
+	document.getElementById("marksheetNo").innerHTML += marksheetNo;
+	document.getElementById("group").innerHTML += group;
+	document.getElementById("rollNo").innerHTML += rollNo;
+	document.getElementById("regNo").innerHTML += regNo;	
+	document.getElementById("name").innerHTML += name;
+	document.getElementById("fatherName").innerHTML += fatherName;
+	document.getElementById("collegeName").innerHTML += collegeName;	
+	
+	
+</script>
+</body>
+</html>
